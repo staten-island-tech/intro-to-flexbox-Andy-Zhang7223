@@ -1,0 +1,23 @@
+.card {
+  width: 23%;
+  height: 500px;
+  background-color: black;
+  margin: 20px auto;
+  border: 5px solid white;
+}
+.container {
+  width: 90vw;
+  background-color: white;
+  margin: 25px auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+#doombringer-text {
+  color: red;
+  text-align: center;
+}
+#doombringer-img {
+  display: block;
+  margin: 0px auto;
+}
