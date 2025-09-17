@@ -1,21 +1,43 @@
+body {
+  background-color: black;
+}
+h1 {
+  color: white;
+  text-align: center;
+}
 .card {
   width: 23%;
   height: 500px;
   background-color: black;
   margin: 20px auto;
-  border: 5px solid white;
+  border: 5px solid #9da29e;
 }
 .container {
   width: 90vw;
-  background-color: white;
+  background-color: #8cb3ce;
   margin: 25px auto;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
+p {
+  color: white;
+  text-align: center;
+}
+button {
+  width: 100%;
+}
+.price {
+  color: white;
+  text-align: center;
+}
+img {
+  width: 100%;
+}
 #doombringer-text {
   color: red;
   text-align: center;
+  font-size: xx-large;
 }
 #doombringer-img {
   display: block;
