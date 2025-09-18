@@ -1,5 +1,21 @@
-body {
-  background-color: black;
+.background--custom {
+  background-color: #ffffff;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: -2;
+  top: 0;
+  left: 0;
+}
+canvas#canvas {
+  z-index: -1;
+  position: absolute;
+  transform: rotate(0deg) scale(2) translateY(-62%);
+  --gradient-color-1: #644e5b;
+  --gradient-color-2: #6cc4f7;
+  --gradient-color-3: #131216;
+  --gradient-color-4: #f3f2ef;
+  --gradient-speed: 0.000018;
 }
 h1 {
   color: white;
@@ -33,6 +49,8 @@ button {
 }
 img {
   width: 100%;
+  height: 50%;
+  object-fit: cover;
 }
 #doombringer-text {
   color: red;
@@ -42,4 +60,13 @@ img {
 #doombringer-img {
   display: block;
   margin: 0px auto;
+}
+
+@media screen and (max-width: 800px) {
+  .card {
+    width: 100%;
+  }
+  .container {
+    flex-direction: column;
+  }
 }
