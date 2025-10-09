@@ -28,7 +28,7 @@ canvas#canvas {
   --gradient-speed: 0.000006;
 }
 h1 {
-  color: white;
+  /* color: white; */
   text-align: center;
   padding: 20%;
   margin: 0px auto;
