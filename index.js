@@ -161,8 +161,22 @@ const Rat = [
   },
 ];
 
-function inject(item) {
+function inject(rats) {
   const container = document.querySelector(".container");
-  container.insertAdjacentHTML("afterbegin", `<h1>${item.name}</h1>`);
+  container.insertAdjacentHTML(
+    "afterbegin",
+    `<div><img src=${rats.img} alt=""/><h1>${rats.title}</h1><h2>${rats.price}</h2><button>Add to cart</button></div>`
+  );
 }
 Rat.forEach((Rat) => inject(Rat));
+
+function addtocart() {
+  const buttons = document.querySelector(".atc");
+  const btnArray = Array.from(buttons);
+  btnArray.forEach((btn) =>
+    btn.addEventListener("click", function (event) {
+      console.log("Add to cart");
+    })
+  );
+}
+addtocart();
