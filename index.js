@@ -165,7 +165,7 @@ function inject(rats) {
   const container = document.querySelector(".container");
   container.insertAdjacentHTML(
     "afterbegin",
-    `<div><img src=${rats.img} alt=""/><h1>${rats.title}</h1><h2>${rats.price}</h2><button>Add to cart</button></div>`
+    `<div class="card"><img src=${rats.img} alt=""/><h1>${rats.title}</h1><h2>${rats.price}</h2><button>Add to cart</button></div>`
   );
 }
 Rat.forEach((Rat) => inject(Rat));
@@ -175,7 +175,10 @@ function addtocart() {
   const btnArray = Array.from(buttons);
   btnArray.forEach((btn) =>
     btn.addEventListener("click", function (event) {
-      console.log("Add to cart");
+      console.log(
+        event.target.closest(".card").getAttribute(`${Rat.price}`),
+        event.target.textContext
+      );
     })
   );
 }
