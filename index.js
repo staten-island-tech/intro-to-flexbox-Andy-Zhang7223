@@ -137,7 +137,7 @@ const Rat = [
   },
   {
     id: 17,
-    title: "RAT NEEDS MEDICAL ATTENTION",
+    title: "RAT NEEDS ",
     price: -10000,
     instock: true,
     img: "https://bigrat.kennethng.dev/auto/rat-plush-hat.png",
@@ -165,21 +165,27 @@ function inject(rats) {
   const container = document.querySelector(".container");
   container.insertAdjacentHTML(
     "afterbegin",
-    `<div class="card"><img src=${rats.img} alt=""/><h1>${rats.title}</h1><h2>${rats.price}</h2><button>Add to cart</button></div>`
+    `<div class="card" data-title=${rats.title}>
+    <img src=${rats.img} alt=""/>
+    <h1>${rats.title}</h1>
+    <h2>${rats.price}</h2>
+    <button class="atc">Add to cart</button>
+    </div>`
   );
 }
 Rat.forEach((Rat) => inject(Rat));
 
-function addtocart() {
-  const buttons = document.querySelector(".atc");
+function addtocart(rats) {
+  const buttons = document.querySelectorAll(".atc");
   const btnArray = Array.from(buttons);
   btnArray.forEach((btn) =>
     btn.addEventListener("click", function (event) {
       console.log(
-        event.target.closest(".card").getAttribute(`${Rat.price}`),
+        event.target.closest(".card").getAttribute("rats.data-title"),
         event.target.textContext
+        //find item in array
       );
     })
   );
 }
-addtocart();
+addtocart(Rat);
