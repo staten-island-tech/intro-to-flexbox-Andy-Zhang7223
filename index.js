@@ -180,14 +180,13 @@ function addtocart() {
   const btnArray = Array.from(buttons);
   btnArray.forEach((btn) =>
     btn.addEventListener("click", function (event) {
-      console.log("yahoo!");
-      console.log(
-        event.target.closest(".card").getAttribute("data-title"),
-        event.target.textContent,
-        event.target.closest(".card").getAttribute("h2"),
-        event.target.textContent
-        //find item in array
-      );
+      const card = event.target.closest(".card");
+      let total = 0;
+      function addtotal(x, y) {
+        console.log(x + y);
+      }
+      addtotal(total); //how do we get y to be the price of the item?
+      console.log(card.querySelector("h1").textContent);
     })
   );
 }
