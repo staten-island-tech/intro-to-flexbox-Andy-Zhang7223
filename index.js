@@ -181,12 +181,18 @@ function addtocart() {
   btnArray.forEach((btn) =>
     btn.addEventListener("click", function (event) {
       const card = event.target.closest(".card");
-      let total = 0;
-      function addtotal(x, y) {
-        console.log(x + y);
-      }
-      addtotal(total); //how do we get y to be the price of the item?
-      console.log(card.querySelector("h1").textContent);
+      let item = card.querySelector("h1").textContext
+      item.insertAdjacentHTML(
+        "afterbegin",
+        `${item}`
+      )
+      //console.log(card.querySelector("h1").textContent); //This is the code that can worked
+      //everything after this line is basically jargin
+      //let total = 0;
+      //function addtotal(x, y) {
+        //console.log(x + y);
+      //}
+      //addtotal(total); //how do we get y to be the price of the item?
     })
   );
 }
