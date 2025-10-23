@@ -181,19 +181,29 @@ function addtocart() {
   btnArray.forEach((btn) =>
     btn.addEventListener("click", function (event) {
       const card = event.target.closest(".card");
-      let item = card.querySelector("h1").textContext
-      item.insertAdjacentHTML(
-        "afterbegin",
-        `${item}`
-      )
-      //console.log(card.querySelector("h1").textContent); //This is the code that can worked
+      // let item = card.querySelector("h1").textContext;
+      // addtocart.insertAdjacentHTML("afterbegin", `${item}`);
+      console.log(card.querySelector("h1").textContent); //This is the code that can worked
       //everything after this line is basically jargin
       //let total = 0;
       //function addtotal(x, y) {
-        //console.log(x + y);
+      //console.log(x + y);
       //}
       //addtotal(total); //how do we get y to be the price of the item?
     })
   );
 }
+
+//alter the code below to work with your arrays
+// function filter(category) {
+//   const cards = document.querySelectorAll("")
+//   cards.forEach((card)=>{
+//     const cardCategory = card.getAttribute("data-genre");
+//     if(genre === cardCategory){
+//       card.Style.display = "";
+//     } else {
+//       card.style.display = "none";
+//     }
+//   })
+// }
 addtocart();
