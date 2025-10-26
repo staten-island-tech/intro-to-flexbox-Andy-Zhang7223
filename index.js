@@ -223,17 +223,21 @@ function addtocart() {
   );
 }
 
-//alter the code below to work with your arrays
+//get the code to work lol good luck
 function filter(category) {
+  const filterbutton = document.querySelectorAll(".filter")
   const cards = document.querySelectorAll(".card");
-  cards.forEach((card) => {
-    const cardCategory = card.getAttribute("DOMselectors.category");
-    if (category === cardCategory) {
-      card.Style.display = "";
-    } else {
-      card.style.display = "none";
-    }
+  filterbutton.addEventListener("click", function () {
+    cards.forEach((card) => {
+      const cardCategory = card.getAttribute(".filter");
+      if (category === cardCategory) {
+        card.Style.display = "";
+      } else {
+        card.style.display = "none";
+      }
   });
 }
+)
+}
 addtocart();
-//filter(); //the function needs a way to make category the name of the button
+//filter(Rat.category); //the function needs a way to make category the name of the button
