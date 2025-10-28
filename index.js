@@ -194,7 +194,7 @@ function inject(rats) {
   const container = document.querySelector(".container");
   container.insertAdjacentHTML(
     "afterbegin",
-    `<div class="card" data-title=${rats.title}>
+    `<div class="card" data-title=${rats.title} data-category=${rats.category}>
     <img src=${rats.img} alt=""/>
     <h1 class="name">${rats.title}</h1>
     <h2>${rats.price}</h2>
@@ -210,8 +210,6 @@ function addtocart() {
   btnArray.forEach((btn) =>
     btn.addEventListener("click", function (event) {
       const card = event.target.closest(".card");
-      // let item = card.querySelector("h1").textContext;
-      // addtocart.insertAdjacentHTML("afterbegin", `${item}`);
       console.log(card.querySelector("h1").textContent); //This is the code that can worked
       //everything after this line is basically jargin
       //let total = 0;
@@ -224,20 +222,19 @@ function addtocart() {
 }
 
 //get the code to work lol good luck
-function filter(category) {
-  const filterbutton = document.querySelectorAll(".filter")
+function filter(category) { //FOR SOME REASON THIS CODE WIPES THE CARDS OFF THE WEBSITE AHHHHHHHH
+  //const filterbutton = document.querySelectorAll(".filter");
   const cards = document.querySelectorAll(".card");
-  filterbutton.addEventListener("click", function () {
-    cards.forEach((card) => {
-      const cardCategory = card.getAttribute(".filter");
+  cards.forEach((card) => {
+    card.addEventListener("click", function () {
+      const cardCategory = card.getAttribute(".data-category");
       if (category === cardCategory) {
-        card.Style.display = "";
+        card.style.display = "";
       } else {
         card.style.display = "none";
       }
+    });
   });
 }
-)
-}
 addtocart();
-//filter(Rat.category); //the function needs a way to make category the name of the button
+//filter("Rat"); //the function needs a way to make category the name of the button
