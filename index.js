@@ -222,19 +222,28 @@ function addtocart() {
 }
 
 //get the code to work lol good luck
-function filter(category) { //FOR SOME REASON THIS CODE WIPES THE CARDS OFF THE WEBSITE AHHHHHHHH
-  //const filterbutton = document.querySelectorAll(".filter");
+function filter(category) {
   const cards = document.querySelectorAll(".card");
   cards.forEach((card) => {
-    card.addEventListener("click", function () {
-      const cardCategory = card.getAttribute(".data-category");
-      if (category === cardCategory) {
-        card.style.display = "";
-      } else {
-        card.style.display = "none";
-      }
+    const cardCategory = card.dataset.category.toLowerCase();
+    if (
+      cardCategory === category.toLowerCase() ||
+      category.toLowerCase() === "all"
+    ) {
+      card.style.display = "";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+function filterButtons() {
+  const filterbuttons = document.querySelectorAll(".filters");
+  filterbuttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const categories = button.dataset.genre.toLowerCase();
+      filter(categories);
     });
   });
 }
 addtocart();
-//filter("Rat"); //the function needs a way to make category the name of the button
+filterButtons(); //the function needs a way to make category the name of the button
