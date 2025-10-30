@@ -210,26 +210,24 @@ function addtocart() {
   btnArray.forEach((btn) =>
     btn.addEventListener("click", function (event) {
       const card = event.target.closest(".card");
-      console.log(card.querySelector("h1").textContent); //This is the code that can worked
+      //console.log(card.querySelector("h1").textContent); //This is the code that can worked
       //everything after this line is basically jargin
-      //let total = 0;
-      //function addtotal(x, y) {
-      //console.log(x + y);
-      //}
-      //addtotal(total); //how do we get y to be the price of the item?
+      const newh1 = document.createElement("h1.test");
+      newh1.textContent = card.querySelector("h1").textContent;
+      document.body.appendChild(newh1);
+      let total = 0;
+      //const price = card.querySelectorAll(".price");
+      //total + price;
+      console.log(total); //how do we get y to be the price of the item?
     })
   );
 }
 
-//get the code to work lol good luck
-function filter(category) {
+function filter(btncategory) {
   const cards = document.querySelectorAll(".card");
   cards.forEach((card) => {
-    const cardCategory = card.dataset.category.toLowerCase();
-    if (
-      cardCategory === category.toLowerCase() ||
-      category.toLowerCase() === "all"
-    ) {
+    const cardCategory = card.getAttribute("data-category").toLowerCase();
+    if (cardCategory === btncategory || btncategory === "all") {
       card.style.display = "";
     } else {
       card.style.display = "none";
@@ -239,9 +237,9 @@ function filter(category) {
 function filterButtons() {
   const filterbuttons = document.querySelectorAll(".filters");
   filterbuttons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const categories = button.dataset.genre.toLowerCase();
-      filter(categories);
+    button.addEventListener("click", function (event) {
+      const buttoncategory = event.target.textContent.toLowerCase();
+      filter(buttoncategory);
     });
   });
 }
