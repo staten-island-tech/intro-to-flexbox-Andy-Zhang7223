@@ -211,14 +211,15 @@ function addtocart() {
     btn.addEventListener("click", function (event) {
       const card = event.target.closest(".card");
       //console.log(card.querySelector("h1").textContent); //This is the code that can worked
-      //everything after this line is basically jargin
-      const newh1 = document.createElement("h1.test");
-      newh1.textContent = card.querySelector("h1").textContent;
-      document.body.appendChild(newh1);
-      let total = 0;
-      //const price = card.querySelectorAll(".price");
-      //total + price;
-      console.log(total); //how do we get y to be the price of the item?
+      const item = document.createElement("p"); //Apply a class to this and the createElement below
+      const price = document.createElement("p");
+      const addtocartdiv = document.getElementById("addtocart");
+      item.textContent = card.querySelector("h1").textContent;
+      price.textContent = card.querySelector("h2").textContent;
+      addtocartdiv.appendChild(item);
+      addtocartdiv.appendChild(price);
+      //let total = 0;
+      //console.log(total);
     })
   );
 }
