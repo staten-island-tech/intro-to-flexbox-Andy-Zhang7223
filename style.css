@@ -124,13 +124,19 @@ img {
 
 #addtocart {
   width: 100%;
-  height: 100%;
-  /* display: flex;
-  flex-wrap: wrap; */
+  height: auto;
+  display: block;
+  overflow: visible;
   background-color: black;
   margin: 20px auto;
   border: 5px solid #9da29e;
   padding: 1%;
+}
+.total {
+  color: white;
+  text-align: right;
+  padding: 0%;
+  margin: 0px auto;
 }
 
 @media screen and (max-width: 800px) {

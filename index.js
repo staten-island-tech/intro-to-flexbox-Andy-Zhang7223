@@ -204,25 +204,31 @@ function inject(rats) {
 }
 Rat.forEach((Rat) => inject(Rat));
 
-function addtocart(Rats) {
+function addtocart() {
   const buttons = document.querySelectorAll(".atc");
   const btnArray = Array.from(buttons);
+  let total = 0;
   btnArray.forEach((btn) =>
     btn.addEventListener("click", function (event) {
       const card = event.target.closest(".card");
-      //console.log(card.querySelector("h1").textContent); //This is the code that can worked
-      const item = document.createElement("p"); //Apply a class to this and the createElement below
+      const item = document.createElement("p");
+      item.classList.add("item");
       const price = document.createElement("p");
-      let total = 0;
-      total + Rats.price;
+      price.classList.add("price")
+      const itemprice = card.querySelector("h2").innerHTML;
+      const itempriceintegar = Number(itemprice)
+      total = total + itempriceintegar;
+      console.log(total)
       const totalseen = document.createElement("h1");
       const addtocartdiv = document.getElementById("addtocart");
-      totalseen.textContent = total.textContent;
+      totalseen.textContent = total;
+      console.log(totalseen);
       item.textContent = card.querySelector("h1").textContent;
       price.textContent = card.querySelector("h2").textContent;
       addtocartdiv.appendChild(item);
       addtocartdiv.appendChild(price);
-      //event.target.totalseen.remove();
+      const oldTotal = document.querySelector("#addtocart h1")
+      if (oldTotal) oldTotal.remove();
       addtocartdiv.appendChild(totalseen);
     })
   );
@@ -248,5 +254,5 @@ function filterButtons() {
     });
   });
 }
-addtocart(Rat);
+addtocart();
 filterButtons(); //the function needs a way to make category the name of the button
